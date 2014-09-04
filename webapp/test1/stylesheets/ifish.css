@@ -1,0 +1,248 @@
+/* Replaces missing clearfix in TwBS gem */
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* line 4, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.cf:before,
+.cf:after {
+  content: "";
+  display: table;
+}
+
+/* line 9, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.cf:after {
+  clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+/* line 14, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.cf {
+  zoom: 1;
+}
+
+/* Fix bug in TwBS 2.0.1 (or .2 ?) */
+/* line 19, ../../app/assets/stylesheets/shared/_flat.css.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 21, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.loading {
+  background: url(http://ifish.io/assets/loader.gif) no-repeat center center;
+}
+
+/* line 29, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.modal form {
+  margin: 0;
+}
+
+/* line 35, ../../app/assets/stylesheets/shared/_flat.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 42, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.navbar-fixed-top .navbar-inner {
+  background: #EEE;
+  border: 0;
+  box-shadow: none;
+}
+
+/* line 50, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.navbar .brand {
+  padding-top: 16px;
+}
+/* line 56, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.navbar .nav li.active a, .navbar .nav li.active a:hover {
+  box-shadow: none;
+}
+/* line 60, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.navbar .nav li a {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  text-trasnform: uppercase !important;
+}
+
+/* line 69, ../../app/assets/stylesheets/shared/_flat.css.scss */
+.btn {
+  border: 0;
+  text-shadow: none;
+}
+
+/* line 2, ../../app/assets/stylesheets/query.css.scss */
+#ifish .slider {
+  margin-top: 2px;
+}
+/* line 8, ../../app/assets/stylesheets/query.css.scss */
+#ifish .thumbnails li {
+  margin-left: 0;
+}
+/* line 11, ../../app/assets/stylesheets/query.css.scss */
+#ifish .thumbnails .thumbnail {
+  padding-top: 10px;
+  background: #FFF;
+  text-align: center;
+  height: 85px;
+  overflow: hidden;
+}
+/* line 18, ../../app/assets/stylesheets/query.css.scss */
+#ifish .thumbnails .thumbnail p {
+  line-height: 18px;
+}
+/* line 24, ../../app/assets/stylesheets/query.css.scss */
+#ifish .loading {
+  background: none;
+}
+/* line 29, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results {
+  /**** Isotope CSS3 transitions ****/
+  /**** disabling Isotope CSS3 transitions ****/
+}
+/* line 30, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope-item {
+  z-index: 2;
+}
+/* line 32, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope-item.isotope-hidden {
+  pointer-events: none;
+  z-index: 1;
+}
+/* line 38, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+/* line 46, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope,
+#ifish #results .isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+/* line 54, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+/* line 62, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity;
+}
+/* line 74, ../../app/assets/stylesheets/query.css.scss */
+#ifish #results .isotope.no-transition,
+#ifish #results .isotope.no-transition .isotope-item,
+#ifish #results .isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+/* line 1, ../../app/assets/stylesheets/users.css.scss */
+.user-nav {
+  padding: 8px 0 0 0;
+}
+/* line 4, ../../app/assets/stylesheets/users.css.scss */
+.user-nav p {
+  float: left;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 10, ../../app/assets/stylesheets/users.css.scss */
+.user-nav .avatar {
+  float: left;
+  margin-left: 20px;
+}
+/* line 13, ../../app/assets/stylesheets/users.css.scss */
+.user-nav .avatar img {
+  border-radius: 18px;
+}
+
+/* line 2, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail {
+  height: 200px;
+  color: #111;
+  position: relative;
+}
+/* line 7, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail:hover {
+  text-decoration: none;
+  color: #0d5d4d;
+}
+/* line 10, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail:hover .summary {
+  color: #0d5d4d;
+}
+/* line 13, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail .summary {
+  position: absolute;
+  bottom: 25px;
+  color: #BBB;
+}
+/* line 17, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail .summary h4 {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+/* line 18, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail .summary p {
+  font-size: 40px;
+  font-weight: bold;
+}
+/* line 22, ../../app/assets/stylesheets/ponds.css.scss */
+#ponds .thumbnail .plus {
+  margin-top: 45px;
+  padding: 22px 0 18px 0;
+  line-height: 0;
+  font-weight: bold;
+  font-size: 72px;
+  text-align: center;
+  background: #fff;
+  border-radius: 36px;
+  color: #ccc;
+  height: 22px;
+  width: 64px;
+}
+
+/* line 1, ../../app/assets/stylesheets/fish.css.scss */
+form#csv_upload {
+  display: inline;
+}
+
+/* line 6, ../../app/assets/stylesheets/fish.css.scss */
+#fish td {
+  height: 34px;
+  font-size: 18px;
+  font-weight: 200;
+}
+/* line 10, ../../app/assets/stylesheets/fish.css.scss */
+#fish td.name {
+  padding: 15px 0 0 5px;
+}
+/* line 13, ../../app/assets/stylesheets/fish.css.scss */
+#fish td.actions {
+  padding: 12px 5px 0 0;
+}
+/* line 15, ../../app/assets/stylesheets/fish.css.scss */
+#fish td.actions a {
+  border: 1px solid #16a085;
+  display: block;
+  padding: 1px 6px 3px 6px;
+  line-height: 18px;
+  text-align: center;
+}
+/* line 22, ../../app/assets/stylesheets/fish.css.scss */
+#fish td.actions a:hover {
+  color: #FFF;
+  background: #16a085;
+  text-decoration: none;
+}
