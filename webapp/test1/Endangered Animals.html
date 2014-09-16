@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html -->
+<html lang="en" class="csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css"></style></head><body class=""><p align="right">  <a href="http://tinyurl.com/c8a79ta" target="_blank">For survey and feedback click here!</a>  </p>
+    <meta charset="utf-8">
+    <title>Endangered Animals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="http://ifish.io.s3.amazonaws.com/endangeredfish/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="http://ifish.io.s3.amazonaws.com/endangeredfish/stylesheets/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <style>
+
+			/*
+				Body
+			*/
+      	body {
+					background: url(images/background.jpg);
+					background-size:100% 100%;
+					
+	      }
+
+			/* 
+				Forms
+			*/
+				/* Search Form */
+				#search{
+					background: #66bd6a;
+				}
+
+				/* Query Form */
+				#query{
+					background: #66bd6a;
+				}
+			
+				/* Enabled Sliders */
+				#query .control-group{
+					color: #1e470c;	
+				}
+			
+				#query .control-group .slider {
+					background: #c0ffcc;
+				}
+			
+				#query .control-group .slider .ui-slider-handle{
+					background: #11400e;
+				}
+			
+			
+				/* Disabled Sliders */
+				#query .control-group.disabled{
+					color: #CCC;	
+				}
+			
+				#query .control-group.disabled .slider {
+					background: #CCC;
+				}
+			
+				#query .control-group.disabled .slider .ui-slider-handle{
+					background:#CCC;
+				}
+
+			/*
+				Favourites
+			*/
+				#favourites{
+					background: #66bd6a;
+				
+				}
+			
+				#favourites ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					font-size: 12px;
+					
+
+				}
+
+			/*
+				Fish
+			*/
+				.thumbnail{
+				  height: 160px;
+				  text-align: center;
+				  color: #FFF;
+					background: #EEE;
+					background-size: 100%;
+				}
+				
+				.fords{
+				  background-color:rgba(0, 0, 0, 0.5);
+				}
+			
+				.thumbnail p{
+				  display: block;
+				  background-color:rgba(0, 0, 0, 0.5);
+				  font-size: 11px;
+				  font-weight: bold;
+				}
+    </style>
+    
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  
+
+   
+		<!--
+			Templates
+		-->
+		<li id="template-fish" class="span3">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title"></span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li>
+	
+		<div id="template-modal" class="modal hide fade">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 data-bind="title"></h3><!-- Fish title data binding -->
+			  </div>
+			  <div class="modal-body">
+					<div class="row-fluid">
+						<div class="span9" data-bind="description"><!-- Fish description data binding -->
+							Loading metadata...
+						</div>
+						<div class="span3">
+							<img data-bind="image"><!-- Fish image data binding -->
+						</div>
+					</div>
+			  </div>
+			  <div class="modal-footer">
+					<a class="btn btn-success" data-bind="favourites" data-dismiss="modal">Add to favourites</a> <!-- Fish favourites action data binding -->
+					<a class="btn btn-info" data-bind="external_url" target="_blank">More info</a> <!-- Fish URL data binding -->
+			  </div>
+			</div>
+		
+	
+		<!--
+			Page Header
+		-->
+
+    
+        <div class="container">
+	    <div class="myInvisibleDiv">
+				<center>
+					<h1><span style="color: #ffffff; font-family: serif; font-size:larger;">Endangered Species</span></h1>
+					<p><span style="color: #ffffff;font-size:larger;">Move the sliders to explore the species.Top three are the closest to your slider choices</span></p>
+				</center>
+			</div>
+			
+			<!--
+				Loading Box - displayed whilst initial fish are loading
+			-->
+			<div id="loading" class="row" style="display: none;">
+				<div class="span12">
+					<div class="well">
+						<center>
+							<h1>Loading... 100%</h1>
+						</center>
+					</div>
+				</div>
+			</div>
+						
+			<!--
+				Form and Results
+			-->
+      <div id="query-and-results" class="row hide" style="display: block;">
+        <div class="span3">
+          <form id="search" class="well">
+            <div class="row-fluid">
+              <input type="text" class="span12 search-query" placeholder="Search" data-last-search="">
+            </div>
+            <ul style="display: none;">
+            </ul>
+          </form>
+
+          <form id="query" class="well form-vertical">
+	
+										<!-- Tag :: Start -->
+            <div class="control-group">
+            Cause <label class="control-label">
+								<span class="pull-left">Peoples</span>
+								<span class="pull-right">Natures</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="people-s-fault-nature-s-fault" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 50%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<!-- Tag :: Start -->
+            <div class="control-group"> 
+             Population <label class="control-label">
+								<span class="pull-left">Low</span>
+								<span class="pull-right">High</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="low-population-high-population" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 50%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+						
+						<!-- Tag :: Start -->
+            <div class="control-group">
+          Habitat  <label class="control-label">
+								<span class="pull-left">Specific</span>
+								<span class="pull-right">General</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="specific-habitat-general-habitat" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 50.5%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<!-- Tag :: Start -->
+            <div class="control-group">
+            Vulnerability  <label class="control-label">
+								<span class="pull-left">Low</span>
+								<span class="pull-right">High</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="low-vulnerability-high-vulnerability" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 48.416666666666664%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<!-- Tag :: Start -->
+            <div class="control-group">
+           Conservation Plan   <label class="control-label">
+								<span class="pull-left">Active</span>
+								<span class="pull-right">Non-Active</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="active-conservation-plan-non-activie-conservation-plan" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 50%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<!-- Tag :: Start -->
+            <div class="control-group">
+          Size    <label class="control-label">
+								<span class="pull-left">Big </span>
+								<span class="pull-right">Small </span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="big-animals-small-animals" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 51.33333333333333%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<!-- Tag :: Start -->
+            <div class="control-group">
+           Hostility   <label class="control-label">
+								<span class="pull-left">Dangerous</span>
+								<span class="pull-right">Tame</span>
+							</label>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" checked="checked" value="true">
+                  <div data-slug="dangerous-tame" class="slider span2 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://ifish.io.s3.amazonaws.com/endangeredfish/endangered.html#" style="left: 50%;"></a></div> <!-- Edit 'data-slug' attribute to connect tag -->
+                </label>
+              </div>
+            </div>
+						<!-- Tag :: End -->
+
+						<h5>Filters</h5>
+            <div class="control-group">
+              <div class="controls">
+		
+								<!-- Filter :: Start -->
+                <label class="checkbox">
+                  <input type="checkbox" data-slug="mammals" class="filter"> <!-- Edit 'data-slug' attribute to connect tag -->
+                  Mammals
+                </label>
+								<!-- Filter :: End -->
+								<!-- Filter :: Start -->
+                <label class="checkbox">
+                  <input type="checkbox" data-slug="birds" class="filter"> <!-- Edit 'data-slug' attribute to connect tag -->
+                  Birds
+                </label>
+								<!-- Filter :: End -->
+								<!-- Filter :: Start -->
+                <label class="checkbox">
+                  <input type="checkbox" data-slug="reptiles" class="filter"> <!-- Edit 'data-slug' attribute to connect tag -->
+                  Reptiles
+                </label>
+								<!-- Filter :: End -->
+
+
+              </div>
+            </div>
+          </form>
+
+
+		<div id="favourites" class="well">
+			<h5>Favourites</h5>
+			<ul><li>Nothing saved</li></ul>
+		</div>
+
+ 
+        </div>
+
+        <div id="results" class="span9"><ul class="thumbnails isotope" style="position: relative; overflow: hidden; height: 760px;"><li class="span3 isotope-item" data-id="cOB8TCJC" title="Grevy&#39;s zebra" data-content="Metadata not loaded." data-position="0" data-score="147" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); z-index: 1000;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Equusgrevyi.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Grevy's zebra</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="vgbWrlm2" title="Australian freshwater crocodile" data-content="Metadata not loaded." data-position="1" data-score="185" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(240px, 0px, 0px) scale3d(1, 1, 1); z-index: 999;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Crocodylusjohnsoni.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Australian freshwater crocodile</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="D7tpPD1v" title="Komodo dragon" data-content="Metadata not loaded." data-position="2" data-score="201" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(480px, 0px, 0px) scale3d(1, 1, 1); z-index: 998;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Varanuskomodoensis.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Komodo dragon</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="AGE49YER" title="Blue-eyed black lemur" data-content="Metadata not loaded." data-position="3" data-score="209" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(0px, 190px, 0px) scale3d(1, 1, 1); z-index: 997;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Eulemurflavifrons.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Blue-eyed black lemur</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="kbDzAnNR" title="Mountain tapir" data-content="Metadata not loaded." data-position="4" data-score="211" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(240px, 190px, 0px) scale3d(1, 1, 1); z-index: 996;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Tapiruspinchaque.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Mountain tapir</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="z8DPzU5P" title="Blakiston&#39;s fish-owl" data-content="Metadata not loaded." data-position="5" data-score="212" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(480px, 190px, 0px) scale3d(1, 1, 1); z-index: 995;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Ketupablakistoni.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Blakiston's fish-owl</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="JWh1sVlz" title="Round island boa" data-content="Metadata not loaded." data-position="6" data-score="217" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(0px, 380px, 0px) scale3d(1, 1, 1); z-index: 994;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Casareadussumieri.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Round island boa</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="qdaBTPx6" title="St Vincent Amazon" data-content="Metadata not loaded." data-position="7" data-score="222" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(240px, 380px, 0px) scale3d(1, 1, 1); z-index: 993;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Amazonaguildingii.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">St Vincent Amazon</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="ycMm8M5j" title="Galapagos tortois" data-content="Metadata not loaded." data-position="8" data-score="240" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(480px, 380px, 0px) scale3d(1, 1, 1); z-index: 992;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Chelonoidisnigra.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Galapagos tortois</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="38Ptritg" title="Galapagos land iguana" data-content="Metadata not loaded." data-position="9" data-score="241" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(0px, 570px, 0px) scale3d(1, 1, 1); z-index: 991;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Conolophussubcristatus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Galapagos land iguana</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="lQgSdD1B" title="Anegada ground iguana" data-content="Metadata not loaded." data-position="10" data-score="242" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(240px, 570px, 0px) scale3d(1, 1, 1); z-index: 990;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Cyclurapinguis.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Anegada ground iguana</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item" data-id="K98FDzl3" title="Volcano rabbit" data-content="Metadata not loaded." data-position="11" data-score="242" data-visible="1" style="position: absolute; left: 0px; top: 0px; opacity: 1; transform: translate3d(480px, 570px, 0px) scale3d(1, 1, 1); z-index: 989;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Romerolagusdiazi.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Volcano rabbit</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="bEb3fVE3" title="Northern brown kiwi" data-content="Metadata not loaded." data-position="12" data-score="244" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(0px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 988;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Apteryxmantelli.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Northern brown kiwi</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="9b8ex2Ig" title="Goodfellow&#39;s tree kangaroo" data-content="Metadata not loaded." data-position="13" data-score="257" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 987;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Goodfellow's tree kangaroo</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="atYRgxlO" title="Black-capped vireo" data-content="Metadata not loaded." data-position="14" data-score="263" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(240px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 986;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Vireoatricapilla.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Black-capped vireo</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="7MVXQEtC" title="New mexican ridge-nosed rattlesnake" data-content="Metadata not loaded." data-position="15" data-score="270" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 985;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Crotaluswillardi.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">New mexican ridge-nosed rattlesnake</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="mRTNwd4s" title="Pygmy hippopotamus" data-content="Metadata not loaded." data-position="16" data-score="277" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 984;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Pygmy hippopotamus</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="1w1tbJ9d" title="Steller&#39;s sea-eagle" data-content="Metadata not loaded." data-position="17" data-score="282" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 983;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Haliaeetuspelagicus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Steller's sea-eagle</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="J73FhWck" title="Giant otter" data-content="Metadata not loaded." data-position="18" data-score="282" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 982;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Giant otter</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="9EMMJS4E" title="Okapi" data-content="Metadata not loaded." data-position="19" data-score="295" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 981;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Okapi</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="tLnAbbmT" title="Greater sage-grouse" data-content="Metadata not loaded." data-position="20" data-score="295" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 980;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Centrocercusurophasianus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Greater sage-grouse</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="H8iZTcby" title="Desert tortoise" data-content="Metadata not loaded." data-position="21" data-score="296" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 979;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Desert tortoise</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="eALCxaiD" title="Andean flamingo" data-content="Metadata not loaded." data-position="22" data-score="305" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 978;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Andean flamingo</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="cRzAWjLy" title="Kakapo" data-content="Metadata not loaded." data-position="23" data-score="308" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 977;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Kakapo</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="Hu0SE70r" title="Edwards&#39;s pheasant" data-content="Metadata not loaded." data-position="24" data-score="310" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 976;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Lophuraedwardsi.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Edwards's pheasant</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="41S7dGSq" title="European mink" data-content="Metadata not loaded." data-position="25" data-score="312" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 975;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Mustelalutreola.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">European mink</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="T4iw8VUd" title="Chestnut-bellied hummingbird" data-content="Metadata not loaded." data-position="26" data-score="313" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 974;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Amaziliacastaneiventris.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Chestnut-bellied hummingbird</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="M05xaTE9" title="Red panda" data-content="Metadata not loaded." data-position="27" data-score="314" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 973;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Red panda</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="TF79KNDL" title="California condor" data-content="Metadata not loaded." data-position="28" data-score="316" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 972;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">California condor</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="kaKvzFKx" title="Antiguan racer" data-content="Metadata not loaded." data-position="29" data-score="320" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(240px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Alsophisantiguae.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Antiguan racer</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="xqOlu5vs" title="King cobra" data-content="Metadata not loaded." data-position="24" data-score="306" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(240px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 976;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Ophiophagushannah.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">King cobra</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="JQrOs6Zq" title="Central american river turtle" data-content="Metadata not loaded." data-position="25" data-score="325" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 975;" data-visible="0">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Dermatemysmawii.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Central american river turtle</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="OHmnm6i9" title="Indian python" data-content="Metadata not loaded." data-position="27" data-score="331" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(240px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 973;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Pythonmolurus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Indian python</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="UJcruwIw" title="Spineless forest lizard" data-content="Metadata not loaded." data-position="22" data-score="299" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(240px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 978;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Calotesliocephalus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Spineless forest lizard</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="jojurLbi" title="American crocodile" data-content="Metadata not loaded." data-position="28" data-score="338" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 972;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Crocodylusacutus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">American crocodile</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="ezMKEhdj" title="Blue and yellow macaw" data-content="Metadata not loaded." data-position="24" data-score="337" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(480px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 976;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Araararauna.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Blue and yellow macaw</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="dSgHsPm6" title="Bald eagle" data-content="Metadata not loaded." data-position="29" data-score="342" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: translate3d(0px, 570px, 0px) scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail" style="background: url(http://ifish.io.s3.amazonaws.com/endangeredfish/images/Haliaeetusleucocephalus.jpg)  no-repeat;">
+				<p>
+					<span data-bind="title">Bald eagle</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="aN754rfY" title="Tiger" data-content="Metadata not loaded." data-position="27" data-score="403" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 973;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Tiger</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="7OIn7NWM" title="Black rhinoceros" data-content="Metadata not loaded." data-position="29" data-score="449" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Black rhinoceros</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="P8Nmm1Ab" title="Three-striped batagur" data-content="Metadata not loaded." data-position="28" data-score="457" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 972;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Three-striped batagur</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="AS9wf9nf" title="American alligator" data-content="Metadata not loaded." data-position="28" data-score="457" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 972;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">American alligator</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="vfZCehxK" title="Koala" data-content="Metadata not loaded." data-position="27" data-score="476" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 973;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Koala</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="EfOKuVGj" title="Shoebill/ Whale-headed stork" data-content="Metadata not loaded." data-position="29" data-score="312" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Shoebill/ Whale-headed stork</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="LtiifdRw" title="Golden-rumped elephant shrew" data-content="Metadata not loaded." data-position="24" data-score="303" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 976;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Golden-rumped elephant shrew</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="J3RF9b8e" title="Araripe manakin" data-content="Metadata not loaded." data-position="26" data-score="315" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 974;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Araripe manakin</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="YAvLAhQ2" title="Golden lion tamarin" data-content="Metadata not loaded." data-position="27" data-score="318" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 973;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Golden lion tamarin</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="NtL1af4H" title="Gouldian finch" data-content="Metadata not loaded." data-position="26" data-score="318" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 974;" data-visible="0">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Gouldian finch</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="ikr5pVyr" title="Pygmy three-toed sloth" data-content="Metadata not loaded." data-position="28" data-score="331" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 972;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Pygmy three-toed sloth</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="TtzAjw92" title="Giant kangaroo rat" data-content="Metadata not loaded." data-position="29" data-score="332" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Giant kangaroo rat</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="BaYEKqpt" title="Giant golden mole" data-content="Metadata not loaded." data-position="24" data-score="329" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 976;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Giant golden mole</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li><li class="span3 isotope-item isotope-hidden" data-id="tsYags4c" title="Roti Island Snake-necked turtle" data-content="Metadata not loaded." data-position="29" data-score="337" data-visible="0" style="position: absolute; left: 0px; top: 0px; opacity: 0; transform: scale3d(0.001, 0.001, 1); z-index: 971;">
+			<div class="thumbnail">
+				<p>
+					<span data-bind="title">Roti Island Snake-necked turtle</span><!-- Fish title data binding -->
+					
+					<span data-bind="score"></span><!-- Fish score data binding -->
+				</p>
+			</div>
+		</li></ul></div>
+      </div>
+    </div> <!-- /container -->
+    
+    
+    <script src="./Endangered Animals_files/ie.js"></script>
+    <script src="./Endangered Animals_files/jquery.js"></script>
+    <script src="./Endangered Animals_files/jquery-ui.js"></script>
+    <script src="./Endangered Animals_files/bootstrap.js"></script>
+    <script src="./Endangered Animals_files/isotope.js"></script>
+    <script src="./Endangered Animals_files/fishpond.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+			/*
+				Basic Setup
+			*/
+			var api_key = "VkyqDHlft2Bg54yr62hB6VtKTuT5neqk3TvhXQkxf";
+     		var pond_token = "5Ug9mS";
+			var max_displayed_results = 12;
+			
+
+
+
+			/*
+				Advanced Setup, be careful editing anything below this line!
+			*/
+      $(function() {
+        // Setup fishpond object
+        var fishpond = new Fishpond(api_key);
+
+        // Bind fishpond events
+        fishpond.ready(fishpondReady);
+        fishpond.error(fishpondError);
+        fishpond.loading(fishpondLoading);
+        fishpond.resultsUpdated(fishpondResultsUpdated);
+
+				// Storage for previous tags, to test if query needs to be processed
+				var lastTags = {};
+				var lastFilters = {};
+
+        // Initialise fishpond
+        fishpond.init(pond_token);
+
+
+        // Fishpond::ready
+        function fishpondReady(pond){
+					$("#search ul").hide();
+					
+					$("#loading").fadeOut(800, function(){
+						$("#query-and-results").fadeIn(800, function(){
+							$("#results").html('<ul class="thumbnails"></ul>');
+
+		          // Setup isotope
+		          var list = $("#results ul")
+		          list.isotope({
+		            itemSelector: 'li',
+		            filter: 'li[data-visible="1"]',
+		            sortBy: 'score',
+		            layoutMode: 'masonry',
+								masonry: {
+							    columnWidth: 80
+							  },
+		            getSortData: {
+		              score: function ( $elem ) {
+		                return parseInt($elem.attr('data-score'), 10);
+		              }
+		            }
+		          });
+
+		          // Enable jQuery-UI Sliders
+		          $(".slider").slider({
+		            value: 10,
+		            min: -2,
+		            max: 22,
+								step: 0.01,
+		            slide: processQuery
+		            //stop: processQuery
+		          });
+		
+		          // Add event handlers to filter checkboxes
+		          $("input[type='checkbox']").change(processQuery);
+
+		          // Add search check interval timer
+		          setInterval(processSearch, 100);
+							
+							// Intialise default query
+		          processQuery();
+							updateFavourites();
+							
+							setInterval(function(){
+								processQuery();
+							}, 50);
+							
+						});
+					});
+        }
+
+        // Fishpond::error
+        function fishpondError(message){
+          alert(message);
+        }
+
+        // Fishpond::loading
+        function fishpondLoading(percentage){
+          $("#loading h1").html("Loading... " + parseInt((percentage * 100), 10) + "%");
+        }
+
+        // Fishpond::resultsUpdated
+        function fishpondResultsUpdated(results){
+          var list = $("#results ul");
+          list.find("li").attr('data-visible', 0);
+
+          for(var resultIndex in results){
+            var result = results[resultIndex];
+            var newItem = false;
+
+            item = list.find("li[data-id='" + result.fish.id + "']").first();
+            if(item.length == 0){
+              newItem = true;
+              item = createNewItem(result);
+            }
+
+            if(newItem){
+              list.isotope('insert', item);
+            }
+
+						decorateItem(item, resultIndex, result);
+          }
+
+          list.isotope('updateSortData', list.find("li")).isotope({sortBy: 'score', sortAscending: true});
+        }
+
+        // createNewItem
+        // Convenience method to generate new list item from a result
+        function createNewItem(result){
+          var item = $("#template-fish").clone();
+					item.attr("id", "");
+          item.attr('data-id', result.fish.id);
+          item.attr('title', result.fish.title);
+          item.attr('data-content', "Metadata not loaded.");
+
+          var thumbnail = item.find(".thumbnail")
+					
+          item.click(function(){
+						showFishMetadata($(this).attr("data-id"));
+          });
+
+          return item;
+        }
+
+				// refreshMetadata
+				// Loads metadata for a result item on the page, adds the image to the background
+				function refreshMetadata(fish_id){
+					fishpond.get_fish(fish_id, function(fish){
+     	      			var item = $("#results ul li[data-id='" + fish.id + "']");
+						var thumbnail = item.find(".thumbnail");
+            thumbnail.css({'background': "url(" + fish.metadata.image_url + ") no-repeat", 'background-size': '100%'});
+						decorateModal(fish);
+          });	
+				}
+				
+				// decorateModal
+				// Decorates the internals of a modal window, just fish metadata
+				function decorateModal(fish){
+					var modal = $('.modal[data-id="' + fish.id + '"]');
+					if(modal.length > 0){
+						modal.find('*[data-bind="description"]').html(fish.metadata.description);
+						modal.find('*[data-bind="image"]').attr('src', fish.metadata.image_url);
+						modal.find('*[data-bind="external_url"]').attr('href', fish.metadata.url);
+					}
+				}
+				
+				// showFishMetadata
+				// Opens a modal window and loads the metadata from the API
+				function showFishMetadata(fish_id){
+          var modal = $('#template-modal').clone();
+					var fish = fishpond.pond.find_fish(fish_id);
+					
+					modal.attr('id', '');
+					modal.attr('data-id', fish_id);
+          modal.find('*[data-bind="title"]').html(fish.title);
+				          					
+					var favouritesButton = modal.find('*[data-bind="favourites"]');
+					if(isFavourite(fish_id)){
+						favouritesButton.html("Remove from favourites");
+						favouritesButton.click(function(){
+							removeFromFavourites(fish_id);
+						});
+					} else {
+						favouritesButton.html("Add to favourites");
+						favouritesButton.click(function(){
+							addToFavourites(fish_id);
+						});
+					}
+											
+					modal.on('hidden', function(){ $(this).detach(); });
+					modal.on('shown', function(){
+						refreshMetadata(fish_id);
+					});
+          modal.modal('show');					
+				}
+
+        // decorateItem
+        // Convenience method to populate fish content
+        function decorateItem(item, position, result){
+          var thumbnail = item.find(".thumbnail");
+          item.attr('data-position', position);
+          item.attr('data-score', result.score);
+
+					item.css({"z-index": 1000 - position});
+
+				//Jon JP: Turn of the display of names in next line:
+					item.find("*[data-bind='title']").html(result.fish.title);
+				
+					item.find("*[data-bind='position']").html(position + 1);
+					
+				//Jon JP: Turn of the display of scores in next line:
+				//	item.find("*[data-bind='score']").html(result.score);
+					
+					if(position < max_displayed_results){
+						item.attr('data-visible', 1);
+						refreshMetadata(result.fish.id);
+					}
+        }
+
+        // processQuery
+        // Convenience method for compiling current form settings into a query
+        function processQuery(){
+          var tags = {};
+          var filters = {};
+					var shouldProcessQuery = false;
+
+          // Collect slider values
+          $(".slider").each(function(){
+            var slider = $(this);
+            if(slider.prev(":checked").length > 0){
+							slider.parents('.control-group').removeClass('disabled');
+							var value = Math.round(parseFloat(slider.slider('value')));
+							if(value < 0) value = 0;
+							if(value > 20) value = 20;
+              tags[slider.attr('data-slug')] = value;
+            } else {
+							slider.parents('.control-group').addClass('disabled');
+              tags[slider.attr('data-slug')] = false;
+            }
+          });
+										
+          // Collect filter values
+          $(".filter:checked").each(function(){
+            var filter = $(this);
+            filters[filter.attr('data-slug')] = 1;
+          });
+
+					for(var tagKey in tags){
+						if(tags[tagKey] != lastTags[tagKey]) shouldProcessQuery = true
+					}
+					
+					if(shouldProcessQuery == false){
+						for(var filterKey in filters){
+							if(filters[filterKey] != lastFilters[filterKey]) shouldProcessQuery = true
+						}
+					}
+					
+					if(shouldProcessQuery){
+						console.log(tags);
+	          fishpond.query(tags, filters);
+					}
+					
+					lastTags = tags;
+					lastFilters = filters;
+        }
+
+        // processSearch
+        // Convenience method for processing text-based searches
+        function processSearch(){
+          var input = $("#search input");
+          var searchString = input.val();
+
+          if(searchString.length > 0 && input.attr('data-last-search') != searchString){ // Check to make sure queries aren't repeatedly running
+            results = fishpond.search(searchString);
+            var list = $("#search ul");
+            list.show();
+            list.empty();
+
+            // Build list of result options
+            for(var resultIndex in results){
+              var result = results[resultIndex];
+              var item = $("<li></li>");
+              var link = $('<a href="#">' + result.fish.title + '</a>');
+              link.attr('data-fish-id', result.fish.id);
+
+              // Result click handler - sets sliders to fishes values
+              link.click(function(){
+                input.val("");
+                $(".filter").removeAttr('checked'); // Uncheck all filters
+
+                // Find the fish in the pond
+                var fish = fishpond.pond.find_fish($(this).attr('data-fish-id'));
+
+                // Set sliders to correct values
+                for(var tagIndex in fish.humanized_tags){
+                  var tag = fish.humanized_tags[tagIndex];
+                  console.log(tag.slug + " = " + tag.value);
+                  var slider = $(".slider[data-slug='" + tag.slug + "']").slider('value', parseInt(tag.value, 10));
+                  slider.prev("input").attr("checked", "checked");
+                }
+
+              });
+              item.append(link);
+              list.append(item);
+            }
+          } else if(searchString.length == 0){ // Hide links if no search string
+            var list = $("#search ul");
+            list.hide();
+          }
+          input.attr('data-last-search', searchString);
+        }
+				
+				// Update Favourites List
+				// Checks favourites in localStorage and updates display accordingly
+				function updateFavourites(){
+					var ui = $("#favourites");
+					var ul = ui.find("ul");
+					ul.empty();
+					
+					var favourites = getFavourites();
+					if(favourites.length == 0){
+						ul.append("<li>Nothing saved</li>");
+					} else {
+						for(var i = 0; i < favourites.length; i++){
+							var fish_id = favourites[i];
+							var li = $("<li />");
+							var a = $("<a />");
+							var fish = fishpond.pond.find_fish(fish_id);
+							
+							a.html(fish.title);
+							a.attr('href', '#');
+							a.attr('data-fish-id', fish_id);
+							
+							a.click(function(e){
+								e.preventDefault();
+								showFishMetadata($(this).attr('data-fish-id'));
+							});
+							li.append(a);
+							ul.append(li);
+						}
+					}
+				}
+				
+				// Adds a fish ID to favourites
+				function addToFavourites(fish_id){
+					console.log("Adding to favourites: " + fish_id);
+					
+					var favourites = getFavourites();
+					if(favourites.indexOf(fish_id) == -1){
+						favourites.push(fish_id);
+					}
+					storeFavourites(favourites);
+					updateFavourites();
+				}
+				
+				// Removes a fish ID from favourites
+				function removeFromFavourites(fish_id){
+					console.log("Removing from favourites: " + fish_id);
+					var favourites = getFavourites();
+					if(favourites.indexOf(fish_id) != -1){
+						favourites.splice(favourites.indexOf(fish_id), 1);
+					}
+					storeFavourites(favourites);
+					updateFavourites();
+				}
+				
+				// Returns true if fish ID is on favourites
+				function isFavourite(fish_id){
+					var favourites = getFavourites();
+					return favourites.indexOf(fish_id) != -1;
+				}
+				
+				// Returns favourite fish in an Array
+				function getFavourites(){
+					var str = localStorage["favourites"];
+					if(str){
+						return str.split(",");
+					}
+					return [];
+				}
+				
+				function storeFavourites(arr){
+					localStorage.setItem("favourites", arr.join(","));
+				}
+      });
+
+
+			
+    </script>
+
+			<p align="center">  <a href="http://www.arkive.org/" target="_blank">Copyright for Information from arkive.org</a>  </p>
+			<p align="center">  <a href="http://www.iucnredlist.org/" target="_blank">Copyright for Information from iucnredlist.org</a>  </p>
+			<p align="center">  <a href="http://www.flickr.com/" target="_blank">Copyright for images from flickr.com</a>  </p>
+  
+
+
+</body></html>
