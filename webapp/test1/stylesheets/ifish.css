@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #FFF;
   text-align: center;
   height: 85px;
+  /*width:145px; size of the fih thumbnail*/
   overflow: hidden;
 }
 /* line 18, ../../app/assets/stylesheets/query.css.scss */
@@ -245,4 +246,13 @@ form#csv_upload {
   color: #FFF;
   background: #16a085;
   text-decoration: none;
+}
+
+
+#tag-community {
+  display: none;
+}
+
+#tag-popularity {
+  display: none;
 }

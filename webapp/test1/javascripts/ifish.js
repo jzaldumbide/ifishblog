@@ -529,7 +529,8 @@
       value = Math.round(ui.value);
       if (value.toString() !== hiddenField.val().toString()) {
         hiddenField.val(value);
-        label.html(label.html().split("(")[0] + " (" + value.toString() + ")");
+        label.html(label.html().split("(")[0] );
+          /*label.html(label.html().split("(")[0] + " (" + value.toString() + ")");*//*original*/
         return this.sendQuery();
       }
     };
