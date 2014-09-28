@@ -1100,7 +1100,8 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+	margin: 0 0 10px;
+	color: #000000;
 }
 .lead {
   margin-bottom: 20px;
@@ -5959,7 +5960,8 @@ button.close {
   margin-left: auto;
 }
 .pull-right {
-  float: right !important;
+	float: right !important;
+	color: #00000;
 }
 .pull-left {
   float: left !important;

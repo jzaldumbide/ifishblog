@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 10px;
   background: #FFF;
   text-align: center;
-  height: 85px;
+  height: 145px;/*original 85*/
   /*width:145px; size of the fih thumbnail*/
   overflow: hidden;
 }

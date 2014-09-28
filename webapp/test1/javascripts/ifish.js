@@ -43,6 +43,7 @@
         isotope: {
           sortBy: 'score',
           layoutMode: 'masonry',
+          transitionDuration:'1.5s',
           getSortData: {
             score: function(item) {
               return parseInt($(item).attr('data-score'), 10);
