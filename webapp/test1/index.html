@@ -54,6 +54,7 @@
 </head>
 <body>
 
+
   <div class='container'>
     <div class='modal hide' id='ajax-loading-modal'>
       <div class='modal-body'>
@@ -65,111 +66,125 @@
       </div>
     </div>
     <br>
-    <div class='pull-right'>
+    <div class=" col-md-12 ">
+
+      <div class="col-md-6 " style="text-align: left"> 
+
+        <a href="about.html">
+         <p style="font-size: 18px;color:orange">
+           <img src="images/design/Fish_left.png" width="80" height="80" > About us
+
+         </p>
+       </a>
+
+     </div>
+     
+     <div class="col-md-6 " style="text-align: right">
       <a href="https://ifishblog.typeform.com/to/dY3x58">
-        <p style="font-size: 18px;">
-          Tell us what you think...please! 
-          <img src="http://img1.wikia.nocookie.net/__cb20110311073119/humongous/images/f/fa/Freddi_Fish_2.png" width="80" height="80" > 
+        <p style="font-size: 18px;color:orange">
+          Tell us what you think...please!
+          <img src="images/design/Fish_right.png" width="80" height="80" > 
         </p>
       </a>
-
     </div>
-    <br><br><br>
-    <div  style="border-radius: 5px; margin-left: 86px;position: relative;background-image: url(images/design/iFish_Banner.jpg); height:180px; width:966px;background-size: cover"> 
 
-      <br>
-      <p><h1 align="center">The Science Blog Pond</h1></p>
-      
-      <br>
-      <br>      
-      <h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pick your filters and move the sliders to find your science blog!</h3>
+  </div>
+  <br><br><br>
+  <div  style="border-radius: 5px; margin-left: 86px;position: relative;background-image: url(images/design/iFish_Banner.jpg); height:180px; width:966px;background-size: cover"> 
 
-    </div>
     <br>
-    
+    <p><h1 align="center">The Science Blog Pond</h1></p>
+
+    <br>
+    <br>      
+    <h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pick your filters and move the sliders to find your science blog!</h3>
+
+  </div>
+  <br>
 
 
 
 
-    <!-- TODO You need to enter a pond ID (from http://ifish.io/ponds) and your data-api_key (from http://ifish.io/account). -->
-    <section id='ifish' data-api_endpoint='http://ifish.io/api' data-api_key='t6YULtH26eKTKpuz8YH97AqsKBTyHDsarRy9A7juT' data-pond_id='Pzfj3d'>
-      <div class='row'>
 
-        <!-- progress bar -->
-        <div class='loading col-md-10 col-md-offset-1'>
-          <center>
-            <p>
-             <div class="progress progress-striped active ">
-              <div class="progress-bar bar" aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100" style="width: 0%" >
-                <strong data-bind='text: name()+ " succesfully loaded"'>
-                  <img src="images/design/loading.gif"  width="100">
-                  Loading Science Blogs
-                  <img src="images/design/loading.gif"  width="100">
-                </strong>
-              </div>
+  <!-- TODO You need to enter a pond ID (from http://ifish.io/ponds) and your data-api_key (from http://ifish.io/account). -->
+  <section id='ifish' data-api_endpoint='http://ifish.io/api' data-api_key='t6YULtH26eKTKpuz8YH97AqsKBTyHDsarRy9A7juT' data-pond_id='Pzfj3d'>
+    <div class='row'>
+
+      <!-- progress bar -->
+      <div class='loading col-md-10 col-md-offset-1'>
+        <center>
+          <p>
+           <div class="progress progress-striped active ">
+            <div class="progress-bar bar" aria-valuenow="percentage" aria-valuemin="0" aria-valuemax="100" style="width: 0%" >
+              <strong data-bind='text: name()+ " succesfully loaded"'>
+                <img src="images/design/loading.gif"  width="100">
+                Loading Science Blogs
+                <img src="images/design/loading.gif"  width="100">
+              </strong>
             </div>
-          </p>
-        </center>
-      </div>
-      <!-- end of progress bar -->
+          </div>
+        </p>
+      </center>
+    </div>
+    <!-- end of progress bar -->
 
 
 
-      <div class='form-and-results row hidden'><!-- aqui es row hidden-->
+    <div class='form-and-results row hidden'><!-- aqui es row hidden-->
 
-        <div class='col-md-10 row clearfix col-md-offset-1'><!-- jp: vlaor original 9, es el ancho de los dos elementos, resultados y controles-->
-
-
-          <div class='col-md-12' >
-            <div class='row clearfix'>
-
-              <form class='controls'>
-
-                <div class='well col-md-12 ' style="background-color: rgba(204, 255, 255, 0.3)">
-
-                  <!-- <div class='well col-md-12 ' style="background-color: rgba(204, 255, 255, 0.3); background-image: url(images/design/iFish_Banner2.jpg); height: 179px; width: 948px; border: 0px solid black;background-size: cover"> -->
+      <div class='col-md-10 row clearfix col-md-offset-1'><!-- jp: vlaor original 9, es el ancho de los dos elementos, resultados y controles-->
 
 
-                  <fieldset class='filters' data-bind='foreach: filterGroups'>
-                    <div class='control-group' data-bind="foreach: filters, attr: { id: 'control_group_' + id }">
-                      <div class='control-label col-md-2 '><!--cuantos filtros quiero -->
-                        <div class='controls'>
-                          <label class='checkbox'>
-                            <input type='checkbox' data-bind="attr: { id: 'query_filters_' + id, name: 'query[filters][' + id + ']', value: value, 'data-slug': slug }">
-                            <small> <div class='name' data-bind='text: name'></div></small>
-                          </label>
-                        </div>
+        <div class='col-md-12' >
+          <div class='row clearfix'>
+
+            <form class='controls'>
+
+              <div class='well col-md-12 ' style="background-color: rgba(204, 255, 255, 0.3)">
+
+                <!-- <div class='well col-md-12 ' style="background-color: rgba(204, 255, 255, 0.3); background-image: url(images/design/iFish_Banner2.jpg); height: 179px; width: 948px; border: 0px solid black;background-size: cover"> -->
+
+
+                <fieldset class='filters' data-bind='foreach: filterGroups'>
+                  <div class='control-group' data-bind="foreach: filters, attr: { id: 'control_group_' + id }">
+                    <div class='control-label col-md-2 '><!--cuantos filtros quiero -->
+                      <div class='controls'>
+                        <label class='checkbox'>
+                          <input type='checkbox' data-bind="attr: { id: 'query_filters_' + id, name: 'query[filters][' + id + ']', value: value, 'data-slug': slug }">
+                          <small> <div class='name' data-bind='text: name'></div></small>
+                        </label>
                       </div>
                     </div>
-                  </fieldset>
-                </div>
-              </form>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
 
 
 
 
 
-            </div>
+          </div>
 
 
 
 
-            <div><!-- original era row-fluid-->
+          <div><!-- original era row-fluid-->
 
-              <div class='col-md-8' style="height:495px;overflow: hidden " ><!-- height:505px to show a certain number of fish-->
-                <div class='row' >
-                  <!-- Add single Fish structure inside the ul. -->
-                  <ul class='results thumbnails' data-bind='foreach: fish'>
-                    <!-- Inside here is a fish template to change as you wish. -->
-                    <li class='col-md-3 '  data-bind="attr: { 'data-score': score, 'data-visible': visible }"><!-- jp: valor original 5 para saber cuantos elementos quedan, siempre y cuando mas ariba tenga valor origianl de 9 -->
+            <div class='col-md-8' style="height:495px;overflow: hidden " ><!-- height:505px to show a certain number of fish-->
+              <div class='row' >
+                <!-- Add single Fish structure inside the ul. -->
+                <ul class='results thumbnails' data-bind='foreach: fish'>
+                  <!-- Inside here is a fish template to change as you wish. -->
+                  <li class='col-md-3 '  data-bind="attr: { 'data-score': score, 'data-visible': visible }"><!-- jp: valor original 5 para saber cuantos elementos quedan, siempre y cuando mas ariba tenga valor origianl de 9 -->
 
-                      <!-- aqui empieza el fish-->
+                    <!-- aqui empieza el fish-->
 
-                      <!-- here change the value of style="width:145x" para el tamano del fish       style="width:145px;background-size: contain;background-repeat: no-repeat; width: 100%"  -->
-                      <div  style="width:145px;background-size: contain;background-repeat: no-repeat; background-position: center" class='thumbnail' data-bind="style: { backgroundImage: 'url(' + fromMetadata().imgpopup + ')' }"><p style=" background-color: rgba(255, 255, 255, 0.9)" data-bind='text: title'></p>
-                        <!-- <img width="50" height="50" data-bind="attr:{src:fromMetadata().imgpopup}" alt=":(">  </img> -->
-                        <!-- Bind fish values to HTML elements. -->
-                        <!-- See "Bindings" here: http://knockoutjs.com/documentation/introduction.html -->
+                    <!-- here change the value of style="width:145x" para el tamano del fish       style="width:145px;background-size: contain;background-repeat: no-repeat; width: 100%"  -->
+                    <div  style="width:145px;background-size: contain;background-repeat: no-repeat; background-position: center" class='thumbnail' data-bind="style: { backgroundImage: 'url(' + fromMetadata().imgpopup + ')' }"><p style=" background-color: rgba(255, 255, 255, 0.9)" data-bind='text: title'></p>
+                      <!-- <img width="50" height="50" data-bind="attr:{src:fromMetadata().imgpopup}" alt=":(">  </img> -->
+                      <!-- Bind fish values to HTML elements. -->
+                      <!-- See "Bindings" here: http://knockoutjs.com/documentation/introduction.html -->
 
 
                           <!-- Use class "totop" in a fish to make element move to top when clicked. 
@@ -354,6 +369,7 @@
 
                       </form>
                       <!-- favorites listado-->
+                      Favourites
                       <div class='row-fluid'>
                         <div class='col-lg-12'>
                           <div class='row col' >
@@ -382,7 +398,7 @@
           <div class='container'>
             <hr>
             <footer>
-              <a href="http://ifish.io/"><p style="background-color: rgba(204, 255, 255, 0.1)" >Powered by ifish.io</p></a>
+              <div class="col-md-6 " style="text-align: left"> <a href="http://ifish.io/"><p style="background-color: rgba(204, 255, 255, 0.1);align:left;color:orange" >Powered by ifish.io</p></a></div>
               
             </footer>
 
@@ -415,8 +431,8 @@
           <script type="text/javascript">
       // Vanilla iFish.
       //
-   //   new IFish();
-   new IFish({metadata:true});//load metadata at the begining
+      new IFish();
+   //new IFish({metadata:true});//load metadata at the begining
       // With a multifield search.
       //
       // new IFish({
