@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html lang="en" class="no-js ie6 old-ie"> <![endif]-->
 <!--[if IE 8]>    <html lang="en" class="no-js ie8 old-ie"> <![endif]-->
@@ -29,7 +26,7 @@
     body {
       padding-top: 1px;/* separacion con la parte superior*/
       padding-bottom: 40px;
-      background-image: url(images/design/background1.jpg);
+      background-image: url(images/design/bg1.jpg);
       background-attachment:fixed; /*to make the background static*/
     }
     .sidebar-nav {
@@ -68,36 +65,36 @@
     <br>
     <div class=" col-md-12 ">
 
-      <div class="col-md-6 " style="text-align: left"> 
-
-        <a href="about.html">
-         <p style="font-size: 18px;color:orange">
-           <img src="images/design/Fish_left.png" width="80" height="80" > About us
+      <div class="col-md-6 " style="text-align: left;"> 
+<a href="about.html" target="_blank">
+         <p style="background-color: rgba(204, 255, 255, 0.1;);color:white; border-radius: 5px;">
+          <!-- <img src="images/design/Fish_left.png" width="80" height="80" >--> About us
 
          </p>
        </a>
 
+    
      </div>
      
      <div class="col-md-6 " style="text-align: right">
-      <a href="https://ifishblog.typeform.com/to/dY3x58">
-        <p style="font-size: 18px;color:orange">
+      <a href="https://ifishblog.typeform.com/to/dY3x58" target="_blank">
+        <p style="background-color: rgba(204, 255, 255, 0.1;);color:white; border-radius: 5px;">
           Tell us what you think...please!
-          <img src="images/design/Fish_right.png" width="80" height="80" > 
+          <!-- <img src="images/design/Fish_right.png" width="80" height="80" > -->
         </p>
       </a>
     </div>
 
   </div>
-  <br><br><br>
-  <div  style="border-radius: 5px; margin-left: 86px;position: relative;background-image: url(images/design/iFish_Banner.jpg); height:180px; width:966px;background-size: cover"> 
+  <br>
+  <div  style="border-radius: 5px; margin-left: 86px;position: relative;background-image: url(images/design/banner2.jpg); height:180px; width:966px;background-size: cover"> 
 
-    <br>
-    <p><h1 align="center">The Science Blog Pond</h1></p>
+    
+    <p><h1 align="center" style="font-size: 44px">The Science Blog Pond</h1></p>
 
-    <br>
-    <br>      
-    <h3 align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pick your filters and move the sliders to find your science blog!</h3>
+    
+    <br>  <br>   <br>       
+    <h3 align="center"  style="font-size: 18px;color:white">Pick your filters and move the sliders to find your science blog!</h3>
 
   </div>
   <br>
@@ -171,7 +168,7 @@
 
           <div><!-- original era row-fluid-->
 
-            <div class='col-md-8' style="height:495px;overflow: hidden " ><!-- height:505px to show a certain number of fish-->
+            <div class='col-md-8' style="height:640px;overflow: hidden " ><!-- height:505px to show a certain number of fish-->
               <div class='row' >
                 <!-- Add single Fish structure inside the ul. -->
                 <ul class='results thumbnails' data-bind='foreach: fish'>
@@ -261,7 +258,7 @@
                   </div>
                   <div class='col-md-4' style="background-color: rgba(204, 255, 255, 0.3)">
                     <!-- Any input field inside id search will be made searchable. -->
-                    <form class='search form-horizontal'>
+                    <br><form class='search form-horizontal'>
                       <div class='well' style="background-color: rgba(204, 255, 255, 0.3)">
                         <fieldset>
                           <input class='search-query col-md-12' placeholder='Search by blog name...' type='text'>
@@ -281,7 +278,7 @@
                               <div class="row clearfix">
                                 <div class="col-md-6 column" style="text-align: left"><small>Frequent Posts</small>
                                 </div>
-                                <div class="col-md-6 column" style="text-align: right"><small>Ocassional Posts</small>
+                                <div class="col-md-6 column" style="text-align: right"><small>Occasional Posts</small>
                                 </div>
                               </div>
 
@@ -398,7 +395,7 @@
           <div class='container'>
             <hr>
             <footer>
-              <div class="col-md-6 " style="text-align: left"> <a href="http://ifish.io/"><p style="background-color: rgba(204, 255, 255, 0.1);align:left;color:orange" >Powered by ifish.io</p></a></div>
+              <div class="col-md-10 col-md-offset-1 " style="text-align: left"> <a href="http://ifish.io/" target="_blank"><p style="background-color: rgba(204, 255, 255, 0.1);align:left;color:white" >Powered by ifish.io</p></a></div>
               
             </footer>
 
@@ -431,8 +428,8 @@
           <script type="text/javascript">
       // Vanilla iFish.
       //
-      new IFish();
-   //new IFish({metadata:true});//load metadata at the begining
+ //     new IFish();
+  new IFish({metadata:true});//load metadata at the begining
       // With a multifield search.
       //
       // new IFish({
@@ -445,4 +442,5 @@
 
   </body>
   </html>
+
 
