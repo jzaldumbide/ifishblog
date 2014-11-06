@@ -1,9 +1,9 @@
 ifishblog
 =========
 
-Using iFish starter kit a webapp for science blogs
+This webapp was developed using iFish starter kit a webapp for science blogs
 
-
+Currently is hosted in http://blogs.ifish.io.s3-website-ap-southeast-2.amazonaws.com/
 
 
 Group members: Asher Trama, Jessica Breadsell, Juan Zaldumbide and Taylor Ogden.                                  
